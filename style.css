@@ -11,9 +11,9 @@
   --header-height: 7.2rem;
   font-size: 62.5%;
   /* colors */
-  --hue: 159;
+  --hue: 184;
   /* HSL color mode */
-  --base-color: hsl(var(--hue) 36% 57%);
+  --base-color: hsl(var(--hue) 53% 43%);
   --base-color-second: hsl(var(--hue) 65% 88%);
   --base-color-alt: hsl(var(--hue) 57% 53%);
   --title-color: hsl(var(--hue) 41% 10%);
@@ -359,4 +359,89 @@ nav.show .icon-close {
 .card .title {
   font-size: 2.4rem;
   margin-bottom: 1.2rem;
+}
+
+/*-----------------------------TESTIMONIALS-----------------*/
+#testimonials {
+  background: white;
+}
+
+#testimonials .container {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#testimonials header {
+  margin-bottom: 0;
+  margin-left: 2.4rem;
+  margin-right: 2.4rem;
+}
+
+#testimonials blockquote {
+  padding: 3.2rem;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+  border-radius: 0.4rem;
+}
+
+#testimonials blockquote p {
+  position: relative;
+  text-indent: 3rem;
+  margin-bottom: 2.4rem;
+  color: var(--title-color);
+}
+
+#testimonials blockquote p span {
+  font: 700 4.8rem serif;
+  color: var(--base-color);
+
+  position: absolute;
+  top: -0.8rem;
+  left: -3rem;
+}
+
+#testimonials cite {
+  display: flex;
+  align-items: center;
+}
+
+#testimonials cite img {
+  width: 3.2rem;
+  height: 3.2rem;
+  object-fit: cover;
+  clip-path: circle();
+  margin-right: 0.8rem;
+}
+
+.swiper-slide {
+  height: auto;
+  padding: 6.4rem 1.6rem;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--base-color);
+}
+
+/*-----------------------------CONTACTC-----------------*/
+#contact .grid {
+  gap: 6.4rem;
+}
+
+#contact .text p {
+  margin-bottom: 3.2rem;
+}
+
+#contact .button i,
+#contact ul li i {
+  font-size: 2.4rem;
+  margin-right: 1rem;
+}
+
+#contact ul li {
+  margin-bottom: 3.2rem;
+  display: flex;
+  align-items: center;
+}
+
+#contact ul li i {
+  color: var(--base-color);
 }

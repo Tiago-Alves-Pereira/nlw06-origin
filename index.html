@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beault Salon</title>
 
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="./assets/fonts/style.css" />
 
@@ -48,7 +53,7 @@
               Um salão exclusivo em São Paulo, especializado em tratamentos
               naturais.
             </p>
-            <a href="#" class="button">Agendar um horário</a>
+            <a href="#contact" class="button">Agendar um horário</a>
           </div>
         </div>
       </section>
@@ -133,14 +138,106 @@
         </div>
       </section>
 
+      <div class="divider-1"></div>
+
       <section class="section" id="testimonials">
-        <div class="container grid"></div>
+        <div class="container">
+          <header>
+            <h2 class="title">Depoimentos de quem já passou por aqui</h2>
+          </header>
+          <div class="testimonials swiper-container">
+            <div class="swiper-wrapper">
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
+                    dolorem a numquam tempora consectetur hic maxime fuga?
+                    Perferendis aspernatur in at necessitatibus, similique
+                    temporibus, nobis accusamus voluptatum vitae ex pariatur?
+                  </p>
+                  <cite>
+                    <img
+                      src="./assets/images/profile01.jpg"
+                      alt="Foto de Wanwssa Souza"
+                    />
+                    Wanessa Souza
+                  </cite>
+                </blockquote>
+              </div>
+
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
+                    dolorem a numquam tempora consectetur hic maxime fuga?
+                    Perferendis aspernatur in at necessitatibus, similique
+                    temporibus, nobis accusamus voluptatum vitae ex pariatur?
+                  </p>
+                  <cite>
+                    <img
+                      src="./assets/images/profile02.jpg"
+                      alt="Foto de Franciele Pereira"
+                    />
+                    Franciele Pereira
+                  </cite>
+                </blockquote>
+              </div>
+
+              <div class="testimonial swiper-slide">
+                <blockquote>
+                  <p>
+                    <span>&ldquo;</span>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
+                    dolorem a numquam tempora consectetur hic maxime fuga?
+                    Perferendis aspernatur in at necessitatibus, similique
+                    temporibus, nobis accusamus voluptatum vitae ex pariatur?
+                  </p>
+                  <cite>
+                    <img
+                      src="./assets/images/profile03.jpg"
+                      alt="Foto de Andressa Passos"
+                    />
+                    Andressa Passos
+                  </cite>
+                </blockquote>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
       </section>
 
+      <div class="divider-2"></div>
+
       <section class="section" id="contact">
-        <div class="container grid"></div>
+        <div class="container grid">
+          <div class="text">
+            <h2 class="title">Entre em contato conosco!</h2>
+            <p>
+              Entre em contato com a Beautysalon, queremos tirar suas dúvidas,
+              ouvir suas críticas e sugestões.
+            </p>
+            <a
+              href="https://api.whatsapp.com/send?phone=+5511966396638&text=Oi! Gostaria de agendar um horário."
+              class="button"
+              target="_blank"
+              ><i class="icon-whatsapp"></i>Entrar em contato</a
+            >
+          </div>
+          <div class="links grid">
+            <ul>
+              <li><i class="icon-phone"></i>11 99845-6754</li>
+              <li><i class="icon-map-pin"></i>R. Amauri Souza, 346</li>
+              <li><i class="icon-mail"></i>contato@beautysalon.com</li>
+            </ul>
+          </div>
+        </div>
       </section>
     </main>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="script.js"></script>
   </body>
 </html>
