@@ -22,6 +22,18 @@
   --body-color: hsl(0 0% 98%);
 
   scroll-behavior: smooth;
+
+  /*font-size variables*/
+  --font-size-texts: 1.6rem;
+  --font-size-title: 3rem;
+  --font-size-buttons: 1.6rem;
+  --font-size-nav: 1.6rem;
+  --font-size-nav-toggle: 1.6rem;
+  --font-size-logo: 2.1rem;
+  --font-size-icon: 2.4rem;
+  --font-size-icon-card: 8rem;
+  --font-size-title-card: 2.4rem;
+  --font-size-blockquote-mark: 4.8rem;
 }
 
 a {
@@ -37,19 +49,16 @@ ul {
   list-style: none;
 }
 
-p {
-  font-size: 1.6rem;
-}
 /*---------------------BASE------------------*/
 body {
-  font: 400 1.6rem 'DM Sans', sans-serif;
+  font: 400 var(--font-size-texts) 'DM Sans', sans-serif;
   background: var(--body-color);
   color: var(--text-color);
   -webkit-font-smoothing: auto;
 }
 
 .title {
-  font: 700 3rem 'Poppins', sans-serif;
+  font: 700 var(--font-size-title) 'Poppins', sans-serif;
   color: var(--title-color);
 }
 
@@ -59,7 +68,7 @@ body {
   height: 5.6rem;
   align-items: center;
   padding: 0 3.2rem;
-  font: 500 1.6rem 'DM Sans', sans-serif;
+  font: 500 var(--font-size-buttons) 'DM Sans', sans-serif;
 
   border-radius: 0.4rem;
   background-color: var(--base-color-alt);
@@ -146,7 +155,7 @@ nav {
   align-items: center;
   width: 100%;
 
-  font-size: 1.6rem;
+  font-size: var(--font-size-nav);
   height: var(--header-height);
 }
 
@@ -218,7 +227,7 @@ nav.show ul.grid {
 
 .toggle {
   color: var(--base-color);
-  font-size: 2.4rem;
+  font-size: var(--font-size-nav-toggle);
   cursor: pointer;
 }
 
@@ -243,12 +252,16 @@ nav.show .icon-close {
 /*---------------------LOGO-------------------------*/
 
 .logo {
-  font: 700 2.1rem 'Poppins', sans-serif;
+  font: 700 var(--font-size-logo) 'Poppins', sans-serif;
   color: var(--title-color);
 }
 
 .logo span {
   color: var(--base-color-alt);
+}
+
+.logo-alt span {
+  color: var(--body-color);
 }
 
 /*-----------------------------HOME-----------------*/
@@ -352,12 +365,12 @@ nav.show .icon-close {
 .card i {
   display: block;
   margin-bottom: 2.4rem;
-  font-size: 8rem;
+  font-size: var(--font-size-icon-card);
   color: var(--base-color);
 }
 
 .card .title {
-  font-size: 2.4rem;
+  font-size: var(--font-size-title-card);
   margin-bottom: 1.2rem;
 }
 
@@ -391,7 +404,7 @@ nav.show .icon-close {
 }
 
 #testimonials blockquote p span {
-  font: 700 4.8rem serif;
+  font: 700 var(--font-size-blockquote-mark) serif;
   color: var(--base-color);
 
   position: absolute;
@@ -432,7 +445,7 @@ nav.show .icon-close {
 
 #contact .button i,
 #contact ul li i {
-  font-size: 2.4rem;
+  font-size: var(--font-size-icon);
   margin-right: 1rem;
 }
 
@@ -444,4 +457,61 @@ nav.show .icon-close {
 
 #contact ul li i {
   color: var(--base-color);
+}
+
+footer {
+  background-color: var(--base-color);
+}
+
+footer .logo {
+  display: inline-block;
+  margin-bottom: 2.4rem;
+  font-size: var(--font-size-logo);
+}
+
+footer .brand p {
+  color: var(--text-color-light);
+  margin-bottom: 1.2rem;
+}
+
+footer .social a {
+  display: inline-block;
+  margin-right: 3.2rem;
+
+  transition: 0.3s;
+}
+
+footer .social a:hover {
+  transform: translateY(-8px);
+}
+
+footer i {
+  font-size: var(--font-size-icon);
+  color: var(--text-color-light);
+}
+
+.back-to-top {
+  color: var(--text-color-light);
+  background: var(--base-color-alt);
+  padding: 1rem;
+  clip-path: circle();
+
+  position: fixed;
+  bottom: 1.2rem;
+  right: 1.2rem;
+
+  font-size: var(--font-size-icon);
+
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+
+  transform: translateY(100%);
+}
+
+.back-to-top.show {
+  visibility: visible;
+  opacity: 1;
+
+  transform: translateY(0);
 }
