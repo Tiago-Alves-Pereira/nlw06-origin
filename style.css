@@ -34,6 +34,11 @@
   --font-size-icon-card: 8rem;
   --font-size-title-card: 2.4rem;
   --font-size-blockquote-mark: 4.8rem;
+
+  --font-size-subtitle: 1.6rem;
+
+  --font-title-style: 'Poppins', sans-serif;
+  --font-body-style: 'DM Sans', sans-serif;
 }
 
 a {
@@ -51,14 +56,14 @@ ul {
 
 /*---------------------BASE------------------*/
 body {
-  font: 400 var(--font-size-texts) 'DM Sans', sans-serif;
+  font: 400 var(--font-size-texts) var(--font-body-style);
   background: var(--body-color);
   color: var(--text-color);
   -webkit-font-smoothing: auto;
 }
 
 .title {
-  font: 700 var(--font-size-title) 'Poppins', sans-serif;
+  font: 700 var(--font-size-title) var(--font-title-style);
   color: var(--title-color);
 }
 
@@ -68,7 +73,7 @@ body {
   height: 5.6rem;
   align-items: center;
   padding: 0 3.2rem;
-  font: 500 var(--font-size-buttons) 'DM Sans', sans-serif;
+  font: 500 var(--font-size-buttons) var(--font-body-style);
 
   border-radius: 0.4rem;
   background-color: var(--base-color-alt);
@@ -111,11 +116,15 @@ body {
 }
 
 .section {
-  padding: 8rem 0;
+  padding: calc(8rem + var(--header-height)) 0;
 }
 
 .section .title {
   margin-bottom: 1.6rem;
+}
+
+.section .subtitle {
+  font-size: var(--font-size-subtitle);
 }
 
 .section header {
@@ -141,10 +150,6 @@ body {
 
 #header.scroll {
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
-}
-
-main {
-  margin-top: calc(var(--header-height) + 3.2rem);
 }
 
 /*---------------------NAVIGATION-------------------------*/
@@ -463,6 +468,10 @@ footer {
   background-color: var(--base-color);
 }
 
+footer.section {
+  padding: 6.4rem 0;
+}
+
 footer .logo {
   display: inline-block;
   margin-bottom: 2.4rem;
@@ -493,7 +502,7 @@ footer i {
 .back-to-top {
   color: var(--text-color-light);
   background: var(--base-color-alt);
-  padding: 1rem;
+  padding: 1.2rem;
   clip-path: circle();
 
   position: fixed;
@@ -514,4 +523,152 @@ footer i {
   opacity: 1;
 
   transform: translateY(0);
+}
+
+@media (min-width: 992px) {
+  :root {
+    --font-size-title: 3.6rem;
+    --font-size-subtitle: 1.8rem;
+
+    --font-size-texts: 1.6rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section {
+    padding: 16rem 0;
+  }
+
+  .button {
+    height: 5rem;
+  }
+
+  main {
+    margin-top: calc(var(--header-height) + 3.2rem);
+  }
+
+  nav .menu {
+    visibility: visible;
+    opacity: 1;
+
+    top: 0;
+  }
+
+  nav .menu ul {
+    display: flex;
+    gap: 3.6rem;
+  }
+
+  nav .menu ul li a.title {
+    font: 400 1.6rem var(--font-body-style);
+  }
+
+  nav .icon-menu {
+    display: none;
+  }
+
+  #home .container {
+    grid-auto-flow: column;
+    justify-content: space-between;
+
+    gap: 11.8rem;
+
+    margin: 0 auto;
+  }
+
+  #home .image {
+    order: 1;
+    max-width: 65.8rem;
+  }
+
+  #home .text {
+    order: 0;
+    max-width: 39.6rem;
+    text-align: left;
+  }
+
+  #home .image::before {
+    left: 5%;
+  }
+
+  #about .container {
+    grid-auto-flow: column;
+    gap: 6.4rem;
+
+    margin: 0 auto;
+  }
+
+  #services .container {
+    margin: 0 auto;
+  }
+
+  #services header {
+    text-align: center;
+    margin: 0 auto 6rem;
+
+    max-width: 52.3rem;
+  }
+
+  #services .cards {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #services .card {
+    width: 35.2rem;
+  }
+
+  #testimonials .container {
+    margin: 0 auto;
+  }
+
+  #testimonials header {
+    max-width: 48.1rem;
+    text-align: center;
+    margin: 0 auto 6.4rem;
+  }
+
+  #testimonials .testimonials {
+    max-width: 54.4rem;
+  }
+
+  #contact .container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #contact .text {
+    max-width: 40.4rem;
+  }
+
+  #contact .text p {
+    max-width: 36.4rem;
+  }
+
+  #contact .links {
+    max-width: 26.2rem;
+    margin: auto;
+  }
+
+  footer .container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  footer .container .brand a {
+    font-size: var(--font-size-title);
+  }
+
+  footer .container .social {
+    display: flex;
+    align-items: center;
+  }
 }
