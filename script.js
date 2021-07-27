@@ -15,10 +15,10 @@ for (const link of links) {
   })
 }
 
-function changeHeaderWhenScroll() {
-  const header = document.querySelector('#header')
-  const navHeight = header.offsetHeight
+const header = document.querySelector('#header')
+const navHeight = header.offsetHeight
 
+function changeHeaderWhenScroll() {
   window.scrollY >= navHeight
     ? header.classList.add('scroll')
     : header.classList.remove('scroll')
@@ -30,7 +30,14 @@ const swiper = new Swiper('.swiper-container', {
     el: '.swiper-pagination'
   },
   mousewheel: false,
-  keyboard: true
+  keyboard: true,
+  breakpoints: {
+    767: {
+      slidesPerView: 2,
+      setWrapperSize: true,
+      mousewheel: true
+    }
+  }
 })
 
 const scrollReveal = ScrollReveal({
@@ -52,15 +59,39 @@ scrollReveal.reveal(
   { interval: 100 }
 )
 
-function backToTop() {
-  const backToTopButton = document.querySelector('.back-to-top')
+const backToTopButton = document.querySelector('.back-to-top')
 
+function backToTop() {
   window.scrollY >= 560
     ? backToTopButton.classList.add('show')
     : backToTopButton.classList.remove('show')
 }
 
+const sections = document.querySelectorAll('main section[id]')
+
+function activeMenuAtSsection() {
+  const checkpoint = window.pageYOffset + (window.innerHeight / 8) * 4
+
+  for (const section of sections) {
+    const sectionTop = section.offsetTop
+    const sectionHeight = section.offsetHeight
+    const sectionId = section.getAttribute('id')
+
+    const checkpointStart = checkpoint >= sectionTop
+    const checkpointEnd = checkpoint <= sectionTop + sectionHeight
+
+    checkpointStart && checkpointEnd
+      ? document
+          .querySelector(`nav ul li a[href*=${sectionId}]`)
+          .classList.add('active')
+      : document
+          .querySelector(`nav ul li a[href*=${sectionId}]`)
+          .classList.remove('active')
+  }
+}
+
 window.addEventListener('scroll', function () {
   backToTop()
   changeHeaderWhenScroll()
+  activeMenuAtSsection()
 })
