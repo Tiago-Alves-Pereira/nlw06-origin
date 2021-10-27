@@ -384,6 +384,7 @@ nav.show .icon-close {
 /*-----------------------------TESTIMONIALS-----------------*/
 #testimonials {
   background: white;
+  overflow: hidden !important;
 }
 
 #testimonials .container {
@@ -422,6 +423,7 @@ nav.show .icon-close {
 #testimonials cite {
   display: flex;
   align-items: center;
+  font-style: normal;
 }
 
 #testimonials cite img {
@@ -435,6 +437,11 @@ nav.show .icon-close {
 .swiper-slide {
   height: auto;
   padding: 6.4rem 1.6rem;
+}
+
+.swiper-pagination-bullet {
+  width: 0.75rem;
+  height: 0.75rem;
 }
 
 .swiper-pagination-bullet-active {
@@ -525,15 +532,6 @@ footer i {
   opacity: 1;
 
   transform: translateY(0);
-}
-
-@media (min-width: 992px) {
-  :root {
-    --font-size-title: 3.6rem;
-    --font-size-subtitle: 1.8rem;
-
-    --font-size-texts: 1.6rem;
-  }
 }
 
 @media (min-width: 1200px) {
@@ -632,7 +630,8 @@ footer i {
   }
 
   #testimonials .container {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   #testimonials header {
@@ -667,5 +666,12 @@ footer i {
   footer .container .social {
     display: flex;
     align-items: center;
+  }
+}
+
+@media (min-width: 992px) {
+  :root {
+    --title-font-size: 2.25rem;
+    --subtitle-font-size: 1.125rem;
   }
 }
